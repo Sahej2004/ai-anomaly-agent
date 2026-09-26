@@ -81,12 +81,15 @@ with st.sidebar:
     
     with st.expander("🤖 Gemini AI Configuration", expanded=True):
         default_gemini_key = get_secret("GEMINI_API_KEY", "")
-        gemini_api_key = st.text_input(
+        gemini_api_key_input = st.text_input(
             "Gemini API Key",
-            value=default_gemini_key,
+            value="",
             type="password",
+            placeholder="Enter API key (optional)",
             help="Get your free API key from Google AI Studio (aistudio.google.com)"
         )
+        # Keep the real key in Streamlit Secrets instead of displaying it in the UI.
+        gemini_api_key = gemini_api_key_input.strip() or default_gemini_key
         gemini_model = st.selectbox(
             "Model Selection",
             ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-1.5-flash", "gemini-1.5-pro"],
