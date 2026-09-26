@@ -1,0 +1,28 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Environment & secrets
+.env
+.env.local
+secrets.toml
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Streamlit logs & cache
+.streamlit/secrets.toml
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+
+# Test/Scratch files
+*.log
+scratch/
+sample_data/*.csv
